@@ -17,4 +17,4 @@ const F = new Physics.Equations.GravitationalForce(object, planet);
 
 console.log(F.value.value);
 
-// Output: 98.1
+// Output: 98.1 (N)
