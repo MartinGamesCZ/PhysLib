@@ -57,6 +57,14 @@ Objects are used to define physical objects. They include properties like mass, 
 const object = new Physics.Object(physical_properties);
 ```
 
+### Projectiles
+
+Projectiles are used to simulate projectiles in your projects. They include properties like `Object`, velocity, position, ...
+
+```typescript
+const projectile = new Physics.Projectile(physical_properties);
+```
+
 ### Fluids
 
 Fluids are used to simulate fluids in your projects. They include properties like density, viscosity, ...
@@ -111,3 +119,15 @@ const buoyant_force = new Physics.Equations.BuoyantForce(object, fluid, planet);
 ```
 
 The result is a class that includes `value` property, which is the Newton unit class.
+
+#### Balistic curve
+
+The balistic curve is the curve that object follows when it's thrown. It includes several properties like the max height, landing distance, time of flight, ...
+
+In code, you can use it like this:
+
+```typescript
+const balistic_curve = new Physics.Equations.BalisticCurve(object, planet);
+```
+
+The result is a class that includes all the properties of the balistic curve.

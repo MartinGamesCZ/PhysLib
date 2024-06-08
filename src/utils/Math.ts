@@ -1,6 +1,8 @@
 import { mathExact } from "math-exact";
 
-export default class Math {
+export default class MathF {
+  static M = Math;
+
   static add(a: number, b: number) {
     return mathExact("Add", a, b);
   }

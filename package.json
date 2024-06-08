@@ -2,6 +2,11 @@
   "name": "physlib",
   "module": "src/index.ts",
   "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "install": "npm install",
+    "publish": "npm publish"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
