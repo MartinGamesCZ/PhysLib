@@ -9,8 +9,14 @@ export default class Math {
     return mathExact("Subtract", a, b);
   }
 
-  static multiply(a: number, b: number) {
-    return mathExact("Multiply", a, b);
+  static multiply(...args: number[]) {
+    let res = args[0];
+
+    for (let i = 1; i < args.length; i++) {
+      res = mathExact("Multiply", res, args[i]);
+    }
+
+    return res;
   }
 
   static divide(a: number, b: number) {
