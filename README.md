@@ -1,15 +1,113 @@
-# physlib
+# PhysLib
 
-To install dependencies:
+### A physics library for JavaScript & TypeScript.
+
+---
+
+> [!IMPORTANT]
+> This library doesn't have 100% accurate physics, but it's a good approximation for most projects.
+
+This library provides a set of physical equations and simulations to help you with your projects that need accurate physics.
+
+## Installation
 
 ```bash
-bun install
+bun install physlib
 ```
 
-To run:
+## Gettings started
 
-```bash
-bun run index.ts
+First, you need to import the library:
+
+```typescript
+import Physics from "physlib";
 ```
 
-This project was created using `bun init` in bun v1.1.9. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Then, you need to define new physics:
+
+```typescript
+const physics = new Physics();
+```
+
+## Usage
+
+### Space objects
+
+#### Planets
+
+Planets are space objects, that are used in a lot of calculations. They include physical properties like mass, radius, ..., but also some properties that are used in lot of calculations, like the gravitational constant.
+
+```typescript
+const planet = new Physics.Planet(physical_properties);
+```
+
+##### Earth
+
+There is a predefined planet for Earth, that you can use:
+
+```typescript
+const earth = new Physics.Planets.Earth();
+```
+
+### Objects
+
+Objects are used to define physical objects. They include properties like mass, velocity, position, ...
+
+```typescript
+const object = new Physics.Object(physical_properties);
+```
+
+### Fluids
+
+Fluids are used to simulate fluids in your projects. They include properties like density, viscosity, ...
+
+```typescript
+const fluid = new Physics.Fluid(physical_properties);
+```
+
+#### Water
+
+There is a predefined fluid for water, that you can use:
+
+```typescript
+const water = new Physics.Fluids.Water();
+```
+
+### Equations
+
+The library includes a lot of equations that you can use in your projects.
+
+#### Gravitational force
+
+The gravitational force is the force that object exerts on the planet. It's calculated using the following equation:
+
+```math
+FG = m * g
+```
+
+In code, you can use it like this:
+
+```typescript
+const gravitational_force = new Physics.Equations.GravitationalForce(
+  object,
+  planet
+);
+```
+
+The result is a class that includes `value` property, which is the Newton unit class.
+
+#### Buoyant force
+
+The buoyant force is the force that fluid exerts on the object. It's calculated using the following equation:
+
+```math
+FB = ρ * V * g
+```
+
+In code, you can use it like this:
+
+```typescript
+const buoyant_force = new Physics.Equations.BuoyantForce(object, fluid, planet);
+```
+
+The result is a class that includes `value` property, which is the Newton unit class.
