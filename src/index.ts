@@ -1,3 +1,4 @@
+import BuoyancyForce from "./classes/Equations/BuoyancyForce";
 import GravitationalForce from "./classes/Equations/GravitationalForce";
 import Fluid from "./classes/Fluid";
 import Fluids from "./classes/Fluid/fluids";
@@ -19,6 +20,7 @@ export default class Physics {
   // Equations
   static Equations = {
     GravitationalForce,
+    BuoyancyForce
   };
 
   //FluidSimulation = FluidSimulation;
